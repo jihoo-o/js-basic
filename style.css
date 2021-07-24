@@ -1,0 +1,27 @@
+:root {
+  /* Color */
+--color-carolina-blue: #A7B7E8;
+--color-blue-angel: #AED1F2;
+--color-jungle-mist: #A9CFDB;
+--color-ice-cold:#AEF2F0;
+--color-water-leaf:#A7E8D4;
+
+  /* Font size */
+--font-large: 48px;
+--font-medium: 28px;
+--font-regular: 18px;
+--font-small: 16px;
+--font-micro: 14px;
+
+  /* Font weight */
+--weight-bold: 700;
+--weight-semi-bold: 600;
+--weight-regular: 400;
+
+  /* Size */
+}
+
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
