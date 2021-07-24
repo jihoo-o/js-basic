@@ -1,12 +1,12 @@
 :root {
   /* Color */
---color-black: rgb(0, 0, 0);
---color-white: rgb(255, 255, 255);
---color-carolina-blue: #A7B7E8;
---color-blue-angel: #AED1F2;
---color-jungle-mist: #A9CFDB;
---color-ice-cold:#AEF2F0;
---color-water-leaf:#A7E8D4;
+  --color-black: rgb(0, 0, 0);
+  --color-white: rgb(255, 255, 255);
+  --color-carolina-blue: #A7B7E8;
+  --color-blue-angel: #AED1F2;
+  --color-jungle-mist: #A9CFDB;
+  --color-ice-cold:#AEF2F0;
+  --color-water-leaf:#A7E8D4;
 
   /* Font size */
 --font-large: 48px;
@@ -16,17 +16,22 @@
 --font-micro: 14px;
 
   /* Font weight */
---weight-bold: 700;
---weight-medium: 600;
---weight-regular: 400;
+  --weight-bold: 700;
+  --weight-medium: 600;
+  --weight-regular: 400;
 
   /* Size */
+  --size-base-space: 10px;
+  --size-border-radius: 3px;
 }
 
 /* Universal tags */
 * {
   box-sizing: border-box;
+}
+body {
   font-family: 'Titillium Web', sans-serif;
+  margin: 20px;
 }
 
 /* Typography */
@@ -56,4 +61,56 @@ p {
   font-weight: var(--weight-regular);
   color: var(--color-black);
   margin: 4px 0px;
+}
+
+/* Navbar */
+#navbar {
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-jungle-mist);
+  color: var(--color-black);
+  /* padding: 0 5px; */
+}
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+.navbar__logo img {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--size-border-radius);
+  cursor: pointer;
+  margin-left: var(--size-base-space)
+}
+.navbar__logo a {
+  text-decoration: none;
+  font-size: var(--font-regular);
+  font-weight: var(--weight-medium);
+  color: var(--color-black);
+  margin-left: var(--size-base-space);
+  cursor: pointer;
+}
+.navbar__menu {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-grow: 1;
+  padding-left: 0;
+}
+.navbar__menu__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  cursor: pointer;
+  transition: background-color .1s ease-in;
+}
+.navbar__menu__item:hover {
+  background-color: var(--color-black);
+  color: var(--color-jungle-mist);
 }
