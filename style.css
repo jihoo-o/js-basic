@@ -1,5 +1,7 @@
 :root {
   /* Color */
+--color-black: rgb(0, 0, 0);
+--color-white: rgb(255, 255, 255);
 --color-carolina-blue: #A7B7E8;
 --color-blue-angel: #AED1F2;
 --color-jungle-mist: #A9CFDB;
@@ -15,7 +17,7 @@
 
   /* Font weight */
 --weight-bold: 700;
---weight-semi-bold: 600;
+--weight-medium: 600;
 --weight-regular: 400;
 
   /* Size */
@@ -24,4 +26,34 @@
 /* Universal tags */
 * {
   box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+/* Typography */
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-medium);
+  color: black;
+  margin: 8px 0px;
+}
+
+h3 {
+  font-size: var(--font-small);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 8px 0px;
+}
+
+p {
+  font-size: var(--font-micro);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 4px 0px;
 }
