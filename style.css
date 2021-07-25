@@ -29,6 +29,9 @@
   /* Size */
   --size-base-space: 10px;
   --size-border-radius: 3px;
+
+  /* animation */
+  --animation-duration: 100ms;
 }
 
 /* Universal tags */
@@ -120,7 +123,7 @@ p {
   justify-content: center;
   flex-grow: 1;
   cursor: pointer;
-  transition: background-color 100ms ease-in;
+  transition: background-color var(--animation-duration) ease-in;
 }
 .navbar__menu__item:hover {
   background-color: var(--color-black);
@@ -148,7 +151,7 @@ p {
   border: 3px solid var(--color-black);
   border-radius: var(--size-border-radius);
   background-color: var(--color-carolina-blue);
-  transition: background-color 300ms ease-in;
+  transition: background-color var(--animation-duration) ease-in;
   margin-top: var(--size-base-space);
   padding: calc(var(--size-base-space) / 2);
 }
@@ -334,7 +337,7 @@ p {
   background-color: var(--color-black);
   color: white;
   opacity: 0;
-  transition: all 100ms ease-in;
+  transition: all var(--animation-duration) ease-in;
   padding: var(--size-base-space);
 }
 .project:hover .project__description {
@@ -380,4 +383,23 @@ p {
 .name a {
   text-decoration: none;
   color: var(--color-orange);
+}
+
+/* Contact */
+#contact {
+  background-color: var(--color-carolina-blue);
+  padding-bottom: var(--size-base-space);
+}
+.contact__links a {
+  font-size: var(--font-large);
+  text-decoration: none;
+  color: var(--color-white);
+  margin-right: var(--size-base-space);
+  transition: transform var(--animation-duration) ease-in;
+}
+.contact__links i:hover {
+  transform: scale(1.1);
+}
+.contact__rights {
+  margin-top: var(--size-base-space);
 }
