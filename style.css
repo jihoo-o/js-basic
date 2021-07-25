@@ -1,7 +1,9 @@
 :root {
   /* Color */
   --color-black: rgb(0, 0, 0);
-  --color-dark-grey: rgb(169, 169, 169);
+  --color-grey: rgb(77, 77, 77);
+  --color-light-grey: rgb(123, 120, 121);
+  --color-dark-grey: rgb(84, 84, 84);
   --color-white: rgb(255, 255, 255);
   --color-carolina-blue: rgb(167, 183, 232);
   --color-carolina-blue-opacity: rgba(167, 183, 232, 0.5);
@@ -9,6 +11,7 @@
   --color-jungle-mist: rgb(169, 207, 219);
   --color-ice-cold: rgb(174, 242, 240);
   --color-water-leaf: rgb(167, 232, 212);
+  --color-orange: rgb(255, 166, 0);
 
   /* Font size */
   --font-large: 48px;
@@ -38,6 +41,9 @@ body {
 section {
   padding: calc(var(--size-base-space) * 2);
   text-align: center;
+  /* margin: auto; */
+}
+.section__container {
   max-width: 1200px;
   margin: auto;
 }
@@ -71,7 +77,6 @@ p {
 /* Navbar */
 #navbar {
   width: 100%;
-  max-width: 1200px;
   height: 50px;
   position: sticky;
   top: 0;
@@ -84,7 +89,7 @@ p {
 .navbar__logo {
   display: flex;
   align-items: center;
-  margin-right: 50px;
+  margin-right: calc(var(--size-base-space) * 5);
 }
 .navbar__logo img {
   width: 20px;
@@ -158,7 +163,7 @@ p {
   height: 50%;
 }
 .about__description {
-  padding: 0 120px;
+  padding: 0 calc(var(--size-base-space) * 12);
 }
 .about__major {
   width: 33%;
@@ -205,4 +210,58 @@ p {
 }
 .job__period {
   font-size: var(--font-micro);
+}
+
+/* Skills */
+#skills {
+  background-color: var(--color-blue-angel);
+  color: var(--color-white);
+}
+.skillset {
+  display: flex;
+  margin-top: calc(var(--size-base-space) * 3);
+}
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-grey);
+  padding: var(--size-base-space) calc(var(--size-base-space) * 2);
+}
+.skillset__right {
+  flex-basis: 40%;
+}
+.skillset__title {
+  font-weight: var(--weight-medium);
+  color: var(--color-white);
+}
+.skill__description {
+  font-size: var(--font-micro);
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+.skill {
+  margin-top: var(--size-base-space);
+}
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-light-grey);
+  margin: auto;
+}
+.skill__value {
+  height: 3px;
+  background-color: var(--color-orange);
+}
+.tools{
+  background-color: var(--color-dark-grey);
+  padding: var(--size-base-space);
+}
+.etc {
+  background-color: var(--color-light-grey);
+  padding: var(--size-base-space);
+}
+.tools__list, .etc__list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
