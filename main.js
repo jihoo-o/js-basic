@@ -2,6 +2,7 @@
 
 // Make navbar transparent when it is on the page
 const navbar = document.querySelector('#navbar');
+const home = document.querySelector('.home__container');
 function onDocumentScroll() {
   const navbarHeight = navbar.getBoundingClientRect().height;
   if (window.scrollY > navbarHeight) {
@@ -9,6 +10,9 @@ function onDocumentScroll() {
   }else {
     navbar.classList.remove('scrolled');
   }
+  // Make home contents slowly fade to transparent as the window scrolls down
+  const homeHeight = home.getBoundingClientRect().height;
+  home.style.opacity = (1 - window.scrollY / homeHeight)
 }
 document.addEventListener('scroll', onDocumentScroll);
 
