@@ -13,6 +13,7 @@
   --color-ice-cold: rgb(174, 242, 240);
   --color-water-leaf: rgb(167, 232, 212);
   --color-orange: rgb(255, 166, 0);
+  --color-navy: rgb(0, 0, 128);
 
   /* Font size */
   --font-large: 48px;
@@ -431,6 +432,27 @@ p {
 }
 .contact__rights {
   margin-top: var(--size-base-space);
+}
+
+/* Arrow up button */
+.arrow-up {
+  font-size: 35px;
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  padding-top: 3px;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+.arrow-up.visible {
+  pointer-events: auto;
+  opacity: 1;
 }
 
 /* For below 768px screen width */
