@@ -55,26 +55,28 @@ const categoryBtns = document.querySelectorAll('.category__btn');
 const projectDisplay = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');  
 categories.addEventListener('click', (event) => {
-  const clickedCategory = event.target.dataset.category || event.target.parentNode.dataset.category;
+  const target = event.target.nodeName === 'BUTTON' ? event.target :
+                    event.target.parentNode;
+  const clickedCategory = target.dataset.category;
   if (clickedCategory == null) {
     return;
   }
-  projects.forEach((project) => {
-    const classList = project.classList;
-    if (clickedCategory === 'all' || clickedCategory === project.dataset.type) {
-      classList.remove('display-none');
-    } else {
-      classList.add('display-none');
-    }
-  });
-  categoryBtns.forEach((btn) => {
-    const classList = btn.classList;
-    if (btn.dataset.category === clickedCategory) {
-      classList.toggle('active', true);
-    } else {
-      classList.toggle('active', false);
-    }
-  });
+  projectDisplay.classList.add('anim-out');
+  setTimeout(() => {
+    projects.forEach((project) => {
+      const classList = project.classList;
+      if (clickedCategory === 'all' || clickedCategory === project.dataset.type) {
+        classList.remove('display-none');
+      } else {
+        classList.add('display-none');
+      }
+    });
+    projectDisplay.classList.remove('anim-out');
+  }, 300);
+  // Change button state
+  const activeBtn = document.querySelector('.selected');
+  activeBtn.classList.remove('selected');
+  target.classList.add('selected');
 });
 
 function scrollIntoView(selector) {

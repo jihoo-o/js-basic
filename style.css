@@ -312,7 +312,6 @@ p {
   align-items: center;
   width: 50%;
   margin: calc(var(--size-base-space) * 3) 0;
-  translate: 0 50px;
 }
 .category__btn {
   font-size: var(--font-micro);
@@ -323,7 +322,7 @@ p {
   padding: calc(var(--size-base-space) / 2);
   margin-right: 4px;
 }
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   cursor: pointer;
   background-color: var(--color-dark-grey);
@@ -344,6 +343,12 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all 300ms ease-out;
+}
+.work__projects.anim-out {
+  opacity: 0.6;
+  transform: scale(0.96) translateY(30px);
 }
 .project {
   position: relative;
