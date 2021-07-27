@@ -25,7 +25,14 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove('open');
   scrollIntoView(link);
+});
+
+// Navbar toggle button for small screen
+const navbarToggle = document.querySelector('.navbar__toggle-btn');
+navbarToggle.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
 });
 
 // Handle click on "contact me" button on home
@@ -66,9 +73,9 @@ categories.addEventListener('click', (event) => {
     projects.forEach((project) => {
       const classList = project.classList;
       if (clickedCategory === 'all' || clickedCategory === project.dataset.type) {
-        classList.remove('display-none');
+        classList.remove('invisible');
       } else {
-        classList.add('display-none');
+        classList.add('invisible');
       }
     });
     projectDisplay.classList.remove('anim-out');
