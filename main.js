@@ -49,6 +49,32 @@ arrowUp.addEventListener('click', () => {
   scrollIntoView('#home');
 });
 
+// Handle click on the work category buttons
+const categories = document.querySelector('.work__categories');
+const categoryBtns = document.querySelectorAll('.category__btn');
+const projectDisplay = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');  
+categories.addEventListener('click', (event) => {
+  const clickedCategory = event.target.dataset.category || event.target.parentNode.dataset.category;
+  if (clickedCategory == null) {
+    return;
+  }
+  projects.forEach((project) => {
+    if (clickedCategory === 'all' || clickedCategory === project.dataset.type) {
+      classList.remove('display-none');
+    } else {
+      classList.add('display-none');
+    }
+  });
+  categoryBtns.forEach((btn) => {
+    if (btn.data.category === clickedCategory) {
+      classList.toggle('active', true);
+    } else {
+      classList.toggle('active', false);
+    }
+  });
+});
+
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   if (selector === '#home') {
