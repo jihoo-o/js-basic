@@ -463,6 +463,20 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+  button {
+    padding: 0;
+  }
+  section {
+    padding: 16px;
+  }
   /* Nav */
   .navbar__toggle-btn {
     display: block;
@@ -490,18 +504,49 @@ p {
     display: block;
   }
   .navbar__menu__item {
+    font-size: var(--font-regular);
     background-color: var(--color-jungle-mist);
+  }
+  /* Toggle */
+  .navbar__toggle-btn {
+    font-size: var(--font-regular);
   }
   /* About */
   .about__major {
     width: 100%;
+    padding: calc(var(--size-base-space) * 2);
+  }
+  .about__description {
+    padding: 0 calc(var(--size-base-space) * 2);
+  }
+  .job__name {
+    padding-top: calc(var(--size-base-space) * 1);
   }
   /* Work */
   .project {
     flex-grow: 1;
   }
+  .work__categories {
+    width: 80%;
+    margin: calc(var(--size-base-space) * 1) 0;
+  }
   /* Skills */
   .skillset {
     flex-direction: column;
+  }
+  /* Testimonial */
+  .testimonial {
+    flex-direction: column;
+  }
+  .testimonial__speech-bubble {
+    margin: var(--size-base-space);
+    order: 1;
+  }
+  /* Arrow up */
+  .arrow-up {
+    font-size: 25px;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
   }
 }
