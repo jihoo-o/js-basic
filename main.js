@@ -60,6 +60,7 @@ categories.addEventListener('click', (event) => {
     return;
   }
   projects.forEach((project) => {
+    const classList = project.classList;
     if (clickedCategory === 'all' || clickedCategory === project.dataset.type) {
       classList.remove('display-none');
     } else {
@@ -67,7 +68,8 @@ categories.addEventListener('click', (event) => {
     }
   });
   categoryBtns.forEach((btn) => {
-    if (btn.data.category === clickedCategory) {
+    const classList = btn.classList;
+    if (btn.dataset.category === clickedCategory) {
       classList.toggle('active', true);
     } else {
       classList.toggle('active', false);

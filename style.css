@@ -312,6 +312,7 @@ p {
   align-items: center;
   width: 50%;
   margin: calc(var(--size-base-space) * 3) 0;
+  translate: 0 50px;
 }
 .category__btn {
   font-size: var(--font-micro);
