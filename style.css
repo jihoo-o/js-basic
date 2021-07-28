@@ -136,6 +136,7 @@ p {
   cursor: pointer;
   transition: background-color var(--animation-duration) ease-in;
 }
+.navbar__menu__item.active,
 .navbar__menu__item:hover {
   background-color: var(--color-black);
   color: var(--color-jungle-mist);
